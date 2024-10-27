@@ -1,9 +1,10 @@
-QuickJoint
+jointurerapide
 ================
 
 
 ## What's this?
 
+It's forked on https://jrainimo.com/build/ work.
 
 This is an Inkscape extension to help rapidly prototype 3D assemblies using a laser cutter, CNC router, waterjet cutter, or similar 2D process.
 
@@ -28,7 +29,7 @@ To install, in Inkscape, go to `Edit > Preferences > System` and take note of th
 
 On my machine, it was `C:\Users\Jarrett\AppData\Roaming\inkscape\extensions`. I had to create the `inkscape\extensions` folders myself, due to the way I'd installed Inkscape.
 
-Copy the two main files, `quickjoint.inx` and `quickjoint.py` into that folder, and restart Inkscape.
+Copy the files, `jointurerapide.*inx*` into that folder, and restart Inkscape.
 
 This extension requires Inkscape 1.0 or newer. There is a legacy version (v0.91 and v0.92 only probably) available in `Releases` on the sidebar.
 

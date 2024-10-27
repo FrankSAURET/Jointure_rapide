@@ -42,19 +42,18 @@ def linesNumber(path):
 
 def to_complex(point):
     return complex(point.x, point.y)
-    
 
-class QuickJoint(inkex.Effect):
+class jointurerapide(inkex.Effect):
     def add_arguments(self, pars):
-        pars.add_argument('-s', '--side', type=int, default=0, help='Object face to tabify')
-        pars.add_argument('-n', '--numtabs', type=int, default=1, help='Number of tabs to add')
-        pars.add_argument('-l', '--numslots', type=int, default=1, help='Number of slots to add')
-        pars.add_argument('-t', '--thickness', type=float, default=3.0, help='Material thickness')
-        pars.add_argument('-k', '--kerf', type=float, default=0.14, help='Measured kerf of cutter')
-        pars.add_argument('-u', '--units', default='mm', help='Measurement units')
-        pars.add_argument('-e', '--edgefeatures', type=inkex.Boolean, default=False, help='Allow tabs to go right to edges')
-        pars.add_argument('-f', '--flipside', type=inkex.Boolean, default=False, help='Flip side of lines that tabs are drawn onto')
-        pars.add_argument('-a', '--activetab', default='', help='Tab or slot menus')
+        pars.add_argument('--side', type=int, default=0, help='Object face to tabify')
+        pars.add_argument('--numtabs', type=int, default=1, help='Number of tabs to add')
+        pars.add_argument('--numslots', type=int, default=1, help='Number of slots to add')
+        pars.add_argument('--thickness', type=float, default=3.0, help='Material thickness')
+        pars.add_argument('--kerf', type=float, default=0.14, help='Measured kerf of cutter')
+        pars.add_argument('--units', default='mm', help='Measurement units')
+        pars.add_argument('--edgefeatures', type=inkex.Boolean, default=False, help='Allow tabs to go right to edges')
+        pars.add_argument('--flipside', type=inkex.Boolean, default=False, help='Flip side of lines that tabs are drawn onto')
+        pars.add_argument('--activetab', default='', help='Tab or slot menus')
                         
     def to_complex(self, command, line):
         debugMsg('To complex: ' + command + ' ' + str(line))
@@ -87,18 +86,18 @@ class QuickJoint(inkex.Effect):
         
         #Kerf expansion
         if self.flipside:  
-            start -= cmath.rect(kerf / 2, polPhi)
-            start -= cmath.rect(kerf / 2, polPhi + (cmath.pi / 2))
+            start += cmath.rect(kerf , polPhi)
+            start += cmath.rect(kerf/2 , polPhi + (cmath.pi / 2))
         else:
-            start -= cmath.rect(kerf / 2, polPhi)
-            start -= cmath.rect(kerf / 2, polPhi - (cmath.pi / 2))
+            start += cmath.rect(kerf , polPhi)
+            start += cmath.rect(kerf/2 , polPhi - (cmath.pi / 2))
             
         lines = []
         lines.append(['M', [start.real, start.imag]])
         
         #Horizontal
         polR = xDistance
-        move = cmath.rect(polR + kerf, polPhi) + start
+        move = cmath.rect(polR - 2*kerf, polPhi) + start
         lines.append(['L', [move.real, move.imag]])
         start = move
         
@@ -108,7 +107,7 @@ class QuickJoint(inkex.Effect):
             polPhi += (cmath.pi / 2)
         else:
             polPhi -= (cmath.pi / 2)
-        move = cmath.rect(polR  + kerf, polPhi) + start
+        move = cmath.rect(polR  - kerf, polPhi) + start
         lines.append(['L', [move.real, move.imag]])
         start = move
         
@@ -118,7 +117,7 @@ class QuickJoint(inkex.Effect):
             polPhi += (cmath.pi / 2)
         else:
             polPhi -= (cmath.pi / 2)
-        move = cmath.rect(polR + kerf, polPhi) + start
+        move = cmath.rect(polR - 2*kerf, polPhi) + start
         lines.append(['L', [move.real, move.imag]])
         start = move
         
@@ -169,7 +168,7 @@ class QuickJoint(inkex.Effect):
         debugMsg('segLength - ' + str(segLength))
         newLines = []
         
-        # when handling firlt line need to set M back
+        # when handling first line need to set M back
         if isinstance(path[line], Move):
             newLines.append(['M', [start.real, start.imag]])
 
@@ -211,7 +210,6 @@ class QuickJoint(inkex.Effect):
             newLines.append(['Z', []])
         return newLines
         
-    
     def draw_slots(self, path):
         #Female slot creation
 
@@ -297,4 +295,4 @@ class QuickJoint(inkex.Effect):
                     newPath = self.draw_slots(p)
 
 if __name__ == '__main__':
-    QuickJoint().run()
+    jointurerapide().run()
