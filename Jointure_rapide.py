@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 '''
+__version__ = "2024.1"
+
 import inkex, cmath
 from inkex.paths import Path, ZoneClose, Move
 from lxml import etree

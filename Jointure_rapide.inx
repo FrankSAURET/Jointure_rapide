@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
 	<_name>Assemblage rapide</name>
-	<id>franksauret.jointurerapide</id>
-	<dependency type="executable" location="extensions">jointurerapide.py</dependency>
+	<id>franksauret.Jointure_rapide</id>
+	<dependency type="executable" location="extensions">Jointure_rapide.py</dependency>
 	<param name="qjuse" type="description" xml:space="preserve">Ajoute des languettes ou des fentes d'assemblage à un chemin ou à une ligne.
 	
 	Attention il faut transformer les objets en chemin.
@@ -24,7 +24,7 @@ La largeur du trait de coupe sera appliquée pour créer des fentes réalisant u
 
 			</param>
 		</vbox>
-		<image>jointurerapide.svg</image>
+		<image>Jointure_rapide.svg</image>
 	</hbox>
 	<param name="thickness" type="float" min="0.0" max="1000.0" precision="3" gui-text="Épaisseur du matériau :">3.0</param>
 	<param name="kerf" type="float" min="-1000.0" max="1000.0" precision="5" gui-text="Largeur du trait de coupe :">0.1</param>
@@ -45,6 +45,6 @@ La largeur du trait de coupe sera appliquée pour créer des fentes réalisant u
 		</effects-menu>
 	</effect>
 	<script>
-		<command reldir="extensions" interpreter="python">jointurerapide.py</command>
+		<command reldir="extensions" interpreter="python">Jointure_rapide.py</command>
 	</script>
 </inkscape-extension>
