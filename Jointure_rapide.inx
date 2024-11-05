@@ -5,8 +5,6 @@
 	<dependency type="executable" location="extensions">Jointure_rapide.py</dependency>
 	<label xml:space="preserve">Ajoute des languettes ou des fentes d’assemblage à un chemin ou à une ligne.</label>
 	<separator/>
-	<label xml:space="preserve" appearance="header">Attention, il faut transformer les objets en chemin (Chemin > Objet en chemin).	</label>
-	<separator/>
 	<hbox>
 		<vbox>
 			<label xml:space="preserve">Pour faire un assemblage, tracer une forme et sélectionner le côté sur lequel mettre les languettes. 

@@ -34,7 +34,7 @@ tàf :
 - Reorganise app tab to add function "tab, slot and both (to draw tab and slot)".
 
 '''
-__version__ = "2024.2"
+__version__ = "2024.2.1"
 
 import inkex, cmath
 from inkex.paths import Path, ZoneClose, Move
