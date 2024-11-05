@@ -1,4 +1,4 @@
 # Ignore all zip files
 *.zip
 # Ignore all subdirectories
-*/
+Docs/*
