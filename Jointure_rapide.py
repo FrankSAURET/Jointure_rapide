@@ -20,21 +20,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-tàf : 
-- Permettre la sélection multiple de bords pour appliquer en une fois.
-- Revoir le MD avec la version actuelle.
+tàf : Permettre la sélection multiple de bords pour appliquer en une fois.
  
 2024.2 : 
-- Réorganisation onglet et suppression des messages de debogage.
-- Conversion automatique des formes en chemins.
-- Traduction en anglais.
+- Réorganisation onglet et suppression des messages de debogage
+- Conversion automatique des formes en chemins
 
 2021 :
 - Added option bymaterial to change kerf
 - Reorganise app tab to add function "tab, slot and both (to draw tab and slot)".
 
 '''
-__version__ = "2024.2.1"
+__version__ = "2024.3"
 
 import inkex, cmath
 from inkex.paths import Path, ZoneClose, Move
