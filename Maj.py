@@ -3,11 +3,21 @@ import requests
 import zipfile
 import shutil
 import inkex
+import platform
 
 __version__ = "2024.2"
 
-REPO = "https://github.com/FrankSAURET"
-INKSCAPE_EXT_DIR = os.path.join(os.getenv('APPDATA'), 'inkscape', 'extensions')
+# Check if OS is Linux or Windows
+system_os = platform.system()
+
+if system_os == "Windows":
+    INKSCAPE_EXT_DIR = os.path.join(os.getenv('APPDATA'), 'inkscape', 'extensions')
+    TEMP_DIR = os.getenv('TEMP')
+elif system_os == "Linux":
+    INKSCAPE_EXT_DIR = os.path.join(os.getenv('HOME'), '.config', 'inkscape', 'extensions')
+    TEMP_DIR = '/tmp'
+
+REPO = "https://github.com/FrankSAURET" 
 CUR_FOLDER=os.path.dirname(os.path.realpath(__file__))
 
 def download_files(url, download_path):
@@ -50,8 +60,8 @@ def mise_a_jour():
     for fichier in fichiers:
         if fichier not in 'Mij': # Ne pas mettre à jour les fichiers Mij [ cette fonction est donc désactivée pour l'instant]
             nomzip=f"{fichier}.zip"
-            download_path = os.path.join(os.getenv('TEMP'),nomzip)
-            extract_path = os.path.join(os.getenv('TEMP'),'extension_extract')
+            download_path = os.path.join(TEMP_DIR, nomzip)
+            extract_path = os.path.join(TEMP_DIR, 'extension_extract')
             NomRepoGithub = f"{REPO}/{fichier}/archive/refs/heads/main.zip"
             download_files(NomRepoGithub, download_path)
             # Extraire le fichier ZIP
