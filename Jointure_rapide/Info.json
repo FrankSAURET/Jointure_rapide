@@ -1,0 +1,10 @@
+{
+  "type": "InkScape extension",
+  "short_description": "Extension pour créer rapidement des jointures pour la découpe laser.",
+  "subject": "découpe laser",
+  "author": "Jarrett Rainimo",
+  "version": "2024.3",
+  "download": ["Jointure_rapide/"],
+  "default_install_dir": "FrankSAURET",
+  "compatibility": ["Inkscape >= 1.2.0"]
+}
