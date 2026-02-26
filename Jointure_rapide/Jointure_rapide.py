@@ -31,7 +31,17 @@ tàf : Permettre la sélection multiple de bords pour appliquer en une fois.
 - Reorganise app tab to add function "tab, slot and both (to draw tab and slot)".
 
 '''
-__version__ = "2024.3"
+
+# Extraction dynamique de la version depuis Info.json
+import json
+import os
+info_path = os.path.join(os.path.dirname(__file__), 'Info.json')
+try:
+    with open(info_path, 'r', encoding='utf-8') as f:
+        info = json.load(f)
+        __version__ = info.get('version', 'unknown')
+except Exception:
+    __version__ = 'unknown'
 
 import inkex, cmath
 from inkex.paths import Path, ZoneClose, Move

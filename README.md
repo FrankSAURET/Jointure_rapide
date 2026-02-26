@@ -1,44 +1,45 @@
-jointurerapide
+Assemblage Rapide
 ================
 
+## Qu'est-ce que c'est ?
 
-## What's this?
+Ce projet est un fork du travail disponible sur https://jrainimo.com/build/.
 
-It's forked on https://jrainimo.com/build/ work.
+C'est une extension Inkscape pour aider à prototyper rapidement des assemblages 3D à l'aide d'une découpe laser, d'une fraiseuse CNC, d'une découpe jet d'eau ou d'un procédé 2D similaire.
 
-This is an Inkscape extension to help rapidly prototype 3D assemblies using a laser cutter, CNC router, waterjet cutter, or similar 2D process.
-
-It can quickly add box tabs to objects.
+Elle permet d'ajouter rapidement des languettes de boîte aux objets.
 
 ![tabs_demo](Docs/TabsDemo.gif)
 
-Target material size and other mechanical properties are configurable.
+La taille du matériau cible et d'autres propriétés mécaniques sont configurables.
 
 ![thickness_demo](Docs/ThicknessDemo.gif)
 
 
-Mating slots can be generating using a path as a guide.
+Des fentes d'assemblage peuvent être générées en utilisant un chemin comme guide.
 
 ![slot_demo](Docs/SlotDemo.gif)
 
 
 ## Installation
 
-To install, in Inkscape, go to `Edit > Preferences > System` and take note of the `User extensions` folder.
+Copiez le dossier **Jointure_rapide** dans le répertoire des extensions d'Inkscape (sous Windows : **%appdata%\inkscape\extensions**).
+Si différent, le répertoire peut être trouvé dans Préférences/Système.
+
+Redémarrez Inkscape.
+
+L'extension sera disponible dans le menu « Extensions > Découpe laser > Assemblage rapide... ».
+
+Elle peut être installée et mise à jour avec l'extension Màj : **extensions > Mise à jour des extensions de Frank SAURET...**.
+
+Màj est téléchargeable  ici : https://github.com/FrankSAURET/Maj
 
 
-On my machine, it was `C:\Users\Jarrett\AppData\Roaming\inkscape\extensions`. I had to create the `inkscape\extensions` folders myself, due to the way I'd installed Inkscape.
+## Contribuer
 
-Copy the files, `jointurerapide.*inx*` into that folder, and restart Inkscape.
-
-This extension requires Inkscape 1.0 or newer. There is a legacy version (v0.91 and v0.92 only probably) available in `Releases` on the sidebar.
+Les rapports de bugs et les pull requests sont les bienvenus. Il s'agit d'un petit projet secondaire, donc je ne m'attends pas à beaucoup de changements, mais les améliorations progressives sont appréciées.
 
 
-## Contributing
+## Pour aller plus loin
 
-Bug reports and pull requests welcome. This is a pretty small side project so I don't expect a whole lot to change, but incremental improvements are rad.
-
-
-## Further Reading
-
-I wrote some more background on this, and also a brief primer on writing Inkscape extensions on my website, [here](https://jrainimo.com/build/?p=1380).
+Jarret a écrit plus d'info sur ce projet, ainsi qu'un bref guide sur l'écriture d'extensions Inkscape sur son site web, [ici](https://jrainimo.com/build/?p=1380).
